@@ -1,0 +1,27 @@
+{% extends "tailwindcss/base.html" %}
+
+
+
+{% block body_class %}
+    h-full antialiased text-slate-200 dark:bg-slate-900 dark:text-slate-200 font-sans m-0 p-5 
+{% endblock %}
+    
+
+    
+{% block header %}
+<header class="bg-slate-900 text-white">
+    {% include "includes/nav.html" %}
+</header>
+{% endblock header %}
+
+
+
+
+{% block footer %}
+<footer>
+    <p>&copy; 2025 App Base.html</p>
+</footer>
+{% endblock footer %}
+
+    
+
