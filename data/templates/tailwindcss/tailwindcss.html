@@ -1,0 +1,21 @@
+{% extends 'tailwindcss/base.html' %}
+{% load static %}
+{% block title %}tailwindcss{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'tailwindcss/css/style.css' %}">
+{% endblock style %}
+
+{% block header %}
+<header>
+    <h1>Welcome to tailwindcss</h1>
+</header>
+{% endblock header %}
+
+{% block content %}
+<p>This is the tailwindcsscontent.</p>
+{% endblock %}
+
+{% block script %} 
+<script src="{% static 'tailwindcss/js/script.js' %}"></script>
+{% endblock script %}

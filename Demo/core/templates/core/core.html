@@ -1,0 +1,17 @@
+{% extends 'tailwindcss/base.html' %}
+{% load static %}
+{% block title %}core{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+{% endblock style %}
+
+
+
+{% block content %}
+<p>This is the corecontent.</p>
+{% endblock %}
+
+{% block script %} 
+<script src="{% static 'core/js/script.js' %}"></script>
+{% endblock script %}
