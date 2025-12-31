@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{% block html_lang %}en{% endblock %}"
+      class="{% block html_class %}{% endblock %}">
+
+<head>
+{% block head %}
+    {% block meta %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock meta %}
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'tailwindcss/css/main.css' %}">
+
+    {% block seo %}{% endblock seo %}
+    {% block css %}{% endblock css %}
+{% endblock head %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+{% block body %}
+    {% block header %}{% endblock header %}
+    {% block layout %}{% endblock layout %}
+    {% block footer %}{% endblock footer %}
+{% endblock body %}
+
+{% block js %}{% endblock js %}
+</body>
+</html>

@@ -1,30 +1,35 @@
+{% extends "tailwindcss/core.html" %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <title>{% block title %}My Site{% endblock %}</title>
-    {% block style %}{% endblock style %}
-</head>
-<body>
-    
-    {% block header %}
-    <header>
-        <h1>Welcome to tailwindcss</h1>
-    </header>
-    {% endblock header %}
+{% block title %}My Site{% endblock %}
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+{% block seo %}
 
-    {% block footer %}
-    <footer>
-        <p>&copy; 2025 My Site</p>
-    </footer>
-    {% endblock footer %}
-    
-</body>
-{% block script %} {% endblock script %}
-</html>
+
+
+<meta name="description" content="{% block meta_description %}Default website description{% endblock %}">
+
+<link rel="icon" href="{% static 'tailwindcss/images/favicon.ico' %}">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'tailwindcss/css/style.css' %}">
+{% endblock %}
+
+{% block header %}
+{% include "tailwindcss/includes/header.html" %}
+{% endblock %}
+
+{% block layout %}
+<main id="content">
+    {% block content %}{% endblock %}
+</main>
+{% endblock %}
+
+{% block footer %}
+{% include "tailwindcss/includes/footer.html" %}
+{% endblock %}
+
+{% block js %}
+{% include "tailwindcss/includes/scripts.html" %}
+{% endblock %}
