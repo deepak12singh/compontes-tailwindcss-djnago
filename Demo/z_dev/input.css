@@ -1,6 +1,22 @@
+/* static/src/input.css */
 @import "tailwindcss" source(none);
 
+/* Overrides default media-query behavior to use the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Explicitly tell Tailwind where your Django templates are */
 @source "../templates/**/*.html";
 @source "../**/templates/**/*.html";
 @source "../components/**/*.html";
 @source "../**/components/**/*.html";
+
+/* Optional: Define custom theme variables for dark mode */
+@theme {
+  --color-brand: #3b82f6;
+}
+
+@layer theme {
+  .dark {
+    --color-brand: #60a5fa;
+  }
+}

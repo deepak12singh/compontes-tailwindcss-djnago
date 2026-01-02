@@ -1,7 +1,18 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="{% block html_lang %}en{% endblock %}"
-      class="{% block html_class %}{% endblock %}">
+      class="{% block html_class %}dark{% endblock %}">
+<head>
+    <script>
+        // Button load hone se pehle hi class apply kar deta hai
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
 
 <head>
 {% block head %}
