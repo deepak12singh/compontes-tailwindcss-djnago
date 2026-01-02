@@ -1,36 +1,32 @@
 {% extends "base.html" %}
 
- {% block title %}App{% endblock %}
+{% block title %}App{% endblock %}
 
 
 {% block layout %}
 <main class="p-6 sm:p-10">
   <div class="max-w-6xl mx-auto">
 
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl overflow-hidden">
+    <div class="bg-surface border border-border rounded-xl shadow-xl overflow-hidden">
 
       <!-- Header -->
-      <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800">
+      <div class="px-6 py-5 border-b border-border">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 class="text-xl font-bold text-slate-900 dark:text-white">Users</h1>
-            <p class="text-sm text-slate-600 dark:text-slate-400">
+            <h1 class="text-xl font-bold text-text-main">Users</h1>
+            <p class="text-sm text-text-muted">
               Manage your team members
             </p>
           </div>
 
           <div class="flex gap-3">
-            <input
-              type="text"
-              placeholder="Search..."
-              class="w-64 px-4 py-2 rounded-lg text-sm
-                     bg-white dark:bg-slate-800
-                     border border-slate-300 dark:border-slate-700
-                     text-slate-900 dark:text-slate-200
+            <input type="text" placeholder="Search..." class="w-64 px-4 py-2 rounded-lg text-sm
+                     bg-surface-alt
+                     border border-border
+                     text-text-main
                      placeholder-slate-400
-                     focus:ring-2 focus:ring-indigo-500 outline-none"
-            >
-            <button class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-semibold">
+                     focus:ring-2 focus:ring-primary outline-none">
+            <button class="px-4 py-2 bg-primary hover:opacity-90 text-primary-content rounded-lg text-sm font-semibold">
               Add user
             </button>
           </div>
@@ -40,7 +36,7 @@
       <!-- Table -->
       <div class="overflow-x-auto">
         <table class="w-full text-left">
-          <thead class="bg-slate-100 dark:bg-slate-800">
+          <thead class="bg-surface-alt border-b border-border">
             <tr>
               <th class="px-6 py-4 text-xs font-bold uppercase text-slate-500">Name</th>
               <th class="px-6 py-4 text-xs font-bold uppercase text-slate-500">Title</th>
@@ -50,51 +46,92 @@
             </tr>
           </thead>
 
-          <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-
-            <tr class="hover:bg-slate-100 dark:hover:bg-slate-800">
-              <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+          <tbody class="divide-y divide-surface">
+            <!-- ROW 1 -->
+            <tr class="transition hover:bg-background/60">
+              <td class="px-6 py-4 font-medium text-text-main">
                 Lindsay Walton
               </td>
-              <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Developer</td>
-              <td class="px-6 py-4 text-slate-500">lindsay@example.com</td>
+              <td class="px-6 py-4 text-text-muted">
+                Developer
+              </td>
+              <td class="px-6 py-4 text-text-muted">
+                lindsay@example.com
+              </td>
               <td class="px-6 py-4">
-                <span class="px-2 py-1 text-xs rounded-full bg-emerald-100 text-emerald-700">
+                <span
+                  class="inline-flex items-center rounded-full bg-success/15 px-2.5 py-1 text-xs font-medium text-success">
                   Member
                 </span>
               </td>
               <td class="px-6 py-4 text-right">
-                <button class="text-indigo-600 hover:underline">Edit</button>
+                <button
+                  class="font-medium text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary/40 rounded">
+                  Edit
+                </button>
               </td>
             </tr>
 
-            <tr class="hover:bg-slate-100 dark:hover:bg-slate-800">
-              <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+            <!-- ROW 2 -->
+            <tr class="transition hover:bg-background/60">
+              <td class="px-6 py-4 font-medium text-text-main">
                 Courtney Henry
               </td>
-              <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Designer</td>
-              <td class="px-6 py-4 text-slate-500">courtney@example.com</td>
+              <td class="px-6 py-4 text-text-muted">
+                Designer
+              </td>
+              <td class="px-6 py-4 text-text-muted">
+                courtney@example.com
+              </td>
               <td class="px-6 py-4">
-                <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">
+                <span
+                  class="inline-flex items-center rounded-full bg-info/15 px-2.5 py-1 text-xs font-medium text-info">
                   Admin
                 </span>
               </td>
               <td class="px-6 py-4 text-right">
-                <button class="text-indigo-600 hover:underline">Edit</button>
+                <button
+                  class="font-medium text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary/40 rounded">
+                  Edit
+                </button>
               </td>
             </tr>
 
+            <!-- ROW 3 -->
+            <tr class="transition hover:bg-background/60">
+              <td class="px-6 py-4 font-medium text-text-main">
+                Tom Cook
+              </td>
+              <td class="px-6 py-4 text-text-muted">
+                Manager
+              </td>
+              <td class="px-6 py-4 text-text-muted">
+                tom@example.com
+              </td>
+              <td class="px-6 py-4">
+                <span
+                  class="inline-flex items-center rounded-full bg-warning/15 px-2.5 py-1 text-xs font-medium text-warning">
+                  Pending
+                </span>
+              </td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  class="font-medium text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary/40 rounded">
+                  Edit
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
 
       <!-- Footer -->
-      <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex justify-between text-sm text-slate-500">
+      <div class="px-6 py-4 border-t border-border flex justify-between text-sm text-text-muted">
         <span>Showing 1–10 of 100</span>
         <div class="space-x-2">
-          <button class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded">Prev</button>
-          <button class="px-3 py-1 bg-indigo-600 text-white rounded">1</button>
-          <button class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded">Next</button>
+          <button class="px-3 py-1 bg-surface-alt border rounded">Prev</button>
+          <button class="px-3 py-1 bg-primary text-primary-content rounded">1</button>
+          <button class="px-3 py-1 bg-surface-alt border rounded">Next</button>
         </div>
       </div>
 

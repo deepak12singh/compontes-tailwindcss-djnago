@@ -1,22 +1,122 @@
 /* static/src/input.css */
 @import "tailwindcss" source(none);
 
-/* Overrides default media-query behavior to use the .dark class */
-@custom-variant dark (&:where(.dark, .dark *));
+/* Dark mode via class (.dark) */
+@custom-variant dark (&:where(.dark, .dark *)));
 
-/* Explicitly tell Tailwind where your Django templates are */
+/* Django template scan paths */
 @source "../templates/**/*.html";
 @source "../**/templates/**/*.html";
 @source "../components/**/*.html";
 @source "../**/components/**/*.html";
 
-/* Optional: Define custom theme variables for dark mode */
-@theme {
-  --color-brand: #3b82f6;
+@layer base {
+  /* =====================================
+     🌤️ LIGHT MODE – GARDEN + GOLD
+     ===================================== */
+  :root {
+    /* Layout */
+    --color-background: #f0fdf4;     /* green-50 */
+    --color-surface: #ffffff;        /* card */
+    --color-surface-alt: #dcfce7;    /* green-100 */
+    --color-border: #bbf7d0;         /* green-200 */
+
+    /* Text */
+    --color-text-main: #052e16;      /* green-950 */
+    --color-text-muted: #166534;     /* green-800 */
+
+    /* ⭐ Primary – Yellow Accent (Actions) */
+    --color-primary: #facc15;        /* yellow-400 */
+    --color-primary-content: #1a2e05;
+
+    /* 🌿 Secondary – Deep Green */
+    --color-secondary: #15803d;      /* green-700 */
+    --color-secondary-content: #ecfdf5;
+
+    /* 🍃 Accent – Lime */
+    --color-accent: #84cc16;         /* lime-500 */
+    --color-accent-content: #1a2e05;
+
+    /* Status */
+    --color-info: #16a34a;
+    --color-success: #22c55e;
+    --color-warning: #eab308;        /* yellow-500 */
+    --color-error: #dc2626;
+  }
+
+  /* =====================================
+     🌙 DARK MODE – DEEP FOREST NIGHT
+     ===================================== */
+  .dark {
+    --color-background: #022c22;     /* forest night */
+    --color-surface: #064e3b;        /* dark leaf */
+    --color-surface-alt: #065f46;
+    --color-border: #14532d;
+
+    --color-text-main: #ecfdf5;      /* moonlight */
+    --color-text-muted: #a7f3d0;
+
+    /* ⭐ Primary – Soft Yellow Glow */
+    --color-primary: #fde047;        /* yellow-300 */
+    --color-primary-content: #022c22;
+
+    /* 🌲 Secondary */
+    --color-secondary: #86efac;
+    --color-secondary-content: #022c22;
+
+    /* 🍀 Accent */
+    --color-accent: #bef264;
+    --color-accent-content: #1a2e05;
+
+    --color-info: #6ee7b7;
+    --color-success: #4ade80;
+    --color-warning: #facc15;
+    --color-error: #f87171;
+  }
+
+  /* =====================================
+     🌧️ OPTIONAL THEME – RAIN FOREST
+     ===================================== */
+  [data-theme="rainforest"] {
+    --color-background: #052e16;
+    --color-surface: #064e3b;
+    --color-surface-alt: #14532d;
+    --color-border: #166534;
+
+    --color-text-main: #ecfdf5;
+    --color-text-muted: #bbf7d0;
+
+    --color-primary: #22c55e;
+    --color-primary-content: #052e16;
+
+    --color-secondary: #166534;
+    --color-accent: #a3e635;
+  }
 }
 
-@layer theme {
-  .dark {
-    --color-brand: #60a5fa;
-  }
+/* =====================================
+   Tailwind Color Mapping
+   ===================================== */
+@theme {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-border: var(--color-border);
+
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+
+  --color-primary: var(--color-primary);
+  --color-primary-content: var(--color-primary-content);
+
+  --color-secondary: var(--color-secondary);
+  --color-secondary-content: var(--color-secondary-content);
+
+  --color-accent: var(--color-accent);
+  --color-accent-content: var(--color-accent-content);
+
+  --color-info: var(--color-info);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
 }

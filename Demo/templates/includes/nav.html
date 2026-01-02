@@ -1,8 +1,8 @@
-<nav class="max-w-7xl mx-auto px-4 **bg-white** dark:bg-slate-900 shadow-sm">
+<nav class="max-w-7xl mx-auto px-4 bg-surface shadow-sm">
     <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <div class="text-xl font-semibold dark:text-white">
-            <a href="/" class="hover:text-indigo-500">MySite</a>
+            <a href="/" class="hover:text-primary">MySite</a>
         </div>
 
         <!-- Desktop Menu -->
@@ -12,14 +12,15 @@
 
         <div class="flex items-center space-x-4">
             <!-- Dark Mode Toggle (ID fixed to 'theme-toggle') -->
-             <button id="theme-toggle" class="p-2 border rounded-lg bg-gray-100 dark:bg-slate-800 dark:border-slate-700 text-sm">
+            <button id="theme-toggle" class="p-2 border rounded-lg bg-surface-alt border-border text-sm">
                 <span class="dark:hidden">🌙 Dark Mode</span>
                 <span class="hidden dark:inline text-white">☀️ Light Mode</span>
-            </button> 
+            </button>
 
             <!-- CTA Button -->
             <div class="hidden md:block">
-                <a href="/login/" class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500">
+                <a href="/login/"
+                    class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-content hover:opacity-90">
                     Login
                 </a>
             </div>
@@ -34,14 +35,14 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-3 pb-4 px-2 text-slate-700">
         {% include "includes/nav_links.html" %}
-        <a href="/login/" class="bg-indigo-600 text-white px-4 py-2 rounded text-center">Login</a>
+        <a href="/login/" class="bg-primary text-primary-content px-4 py-2 rounded text-center">Login</a>
     </div>
 </nav>
 
 <script>
     // Ek hi baar DOMContentLoaded use karein sab ke liye
     window.addEventListener('DOMContentLoaded', () => {
-        
+
         // 1. Mobile Menu Toggle logic
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -53,7 +54,7 @@
 
         // 2. Dark Mode Logic
         const themeToggle = document.getElementById('theme-toggle');
-        
+
         if (themeToggle) {
             // Theme toggle click logic
             themeToggle.addEventListener('click', () => {
@@ -68,45 +69,3 @@
         }
     });
 </script>
-
-   
-
-
-{% comment %} <nav class="max-w-7xl mx-auto px-4">
-        <div class="flex h-16 items-center justify-between">
-
-            <!-- Logo / Brand -->
-            <div class="text-xl font-semibold">
-                <a href="/" class="hover:text-slate-300">
-                    MySite
-                </a>
-            </div>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-slate-300">Home</a>
-                <a href="/about/" class="hover:text-slate-300">About</a>
-                <a href="/components/" class="hover:text-slate-300">Components</a>
-                <a href="/contact/" class="hover:text-slate-300">Contact</a>
-            </div>
-
-            <!-- CTA Button -->
-            <div class="hidden md:block">
-                <a href="/login/"
-                   class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium hover:bg-indigo-500">
-                    Login
-                </a>
-            </div>
-
-            <button id="theme-toggle" class="p-2 border rounded-lg bg-gray-100 dark:bg-slate-800">
-            <span class="dark:hidden">🌙 Dark Mode</span>
-            <span class="hidden dark:inline">☀️ Light Mode</span>
-        </button>
-
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-slate-300 hover:text-white">
-                ☰
-            </button>
-
-        </div>
-</nav>  {% endcomment %}
