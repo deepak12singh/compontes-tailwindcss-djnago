@@ -46,6 +46,7 @@ From any working project, copy these **two folders** into your Django project ro
 My_Project/
 ├── My_Project/
 ├── Applection/
+├── templates     # templates
 ├── tailwindcss/   # Django app (templates + static)
 ├── z_dev/         # Node + Tailwind build tools
 └── manage.py
