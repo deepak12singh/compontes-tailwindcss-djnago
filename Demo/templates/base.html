@@ -3,7 +3,9 @@
 
 
 {% block body_class %}
-bg-background text-text-main transition-colors duration-300
+{% comment %} bg-background text-text-main transition-colors duration-300 {% endcomment %}
+min-h-screen flex flex-col bg-background text-text-main
+
 {% endblock %}
 
 
@@ -12,12 +14,10 @@ bg-background text-text-main transition-colors duration-300
 
 {% block header %}
 <header>
-    {% include "includes/nav.html" %}
+    {% include "includes/nav/nav.html" %}
 </header>
 {% endblock header %}
 
 {% block footer %}
-<footer>
-    <p>&copy; 2025 App Base.html</p>
-</footer>
+{% include "includes/footer/footer.html" %}
 {% endblock footer %}

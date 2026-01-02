@@ -2,7 +2,7 @@
 @import "tailwindcss" source(none);
 
 /* Dark mode via class (.dark) */
-@custom-variant dark (&:where(.dark, .dark *)));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Django template scan paths */
 @source "../templates/**/*.html";
