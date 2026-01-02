@@ -6,6 +6,7 @@ This README is for developers who want to use **TailwindCSS in Django in the sim
 
 1. `tailwindcss/`
 2. `z_dev/`
+3. `templates`
 
 That’s it. Tailwind is ready to use 🚀
 
