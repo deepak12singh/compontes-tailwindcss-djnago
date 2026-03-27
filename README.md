@@ -30,7 +30,7 @@ Make sure your system has the following installed:
 django-admin startproject My_Project
 cd My_Project
 python manage.py startapp Applection
-python main.py    if you need self templates file and full setup setting with run
+python main.py   ->  if you need self templates file and full setup setting with run
 python manage.py runserver
 ```
 
