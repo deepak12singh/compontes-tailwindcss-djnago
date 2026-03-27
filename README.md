@@ -7,6 +7,7 @@ This README is for developers who want to use **TailwindCSS in Django in the sim
 1. `tailwindcss/`
 2. `z_dev/`
 3. `templates`
+4. `main.py` if you need self templates file and full setup setting with run 
 
 That’s it. Tailwind is ready to use 🚀
 
@@ -29,6 +30,7 @@ Make sure your system has the following installed:
 django-admin startproject My_Project
 cd My_Project
 python manage.py startapp Applection
+python main.py    if you need self templates file and full setup setting with run
 python manage.py runserver
 ```
 
