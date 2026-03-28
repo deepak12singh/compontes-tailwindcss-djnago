@@ -17,9 +17,9 @@ That’s it. Tailwind is ready to use 🚀
 
 Make sure your system has the following installed:
 
-* Python 3.10+
+* Python 3.10+  https://www.python.org/downloads/
 * Django 5.x
-* Node.js (LTS recommended)
+* Node.js (LTS recommended)   https://nodejs.org/en/download
 * npm (comes with Node.js)
 
 ---
